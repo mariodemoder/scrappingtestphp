@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use App\Command\ScrapeTicketsCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$application = new Application('Ticket Scraper', '0.1.0');
+$application->add(new ScrapeTicketsCommand());
+
+$application->run();
