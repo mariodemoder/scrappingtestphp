@@ -52,7 +52,7 @@ final class ScrapeTicketsCommandTest extends TestCase
         ]);
 
         self::assertSame(1, $exitCode);
-        self::assertStringContainsString('Proveedor no soportado', $tester->getDisplay());
+        self::assertStringContainsString('Unsupported provider', $tester->getDisplay());
     }
 }
 

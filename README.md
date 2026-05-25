@@ -51,3 +51,7 @@ php bin/console scrape "https://seatgeek.com/aladdin-tickets/theater/2026-07-15-
 
 - `composer test` ejecuta la suite completa de providers, formatter y comando CLI.
 - El comando puede probarse con un provider stub en tests y con URL reales en ejecucion manual.
+
+## Guia de entrega final
+
+- Ver [docs/FINAL_DELIVERY.md](docs/FINAL_DELIVERY.md) para la demo, el pitch tecnico y las limitaciones observadas.

@@ -39,28 +39,28 @@ final class ScrapeTicketsCommand extends Command
         $url = (string) $input->getArgument('url');
 
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {
-            $io->error('URL invalida. Debes proporcionar una URL completa de evento.');
+            $io->error('Invalid URL. You must provide a full event URL.');
             return Command::FAILURE;
         }
 
         $provider = $this->resolveProvider($url);
         if ($provider === null) {
-            $io->error('Proveedor no soportado. Usa una URL de SeatGeek o VividSeats.');
+            $io->error('Unsupported provider. Use a SeatGeek or VividSeats URL.');
             return Command::FAILURE;
         }
 
         try {
             $tickets = $provider->getTickets($url);
         } catch (ProviderException $e) {
-            $io->error(sprintf('Error de proveedor: %s', $e->getMessage()));
+            $io->error(sprintf('Provider error: %s', $e->getMessage()));
             return Command::FAILURE;
         } catch (\Throwable $e) {
-            $io->error(sprintf('Error inesperado: %s', $e->getMessage()));
+            $io->error(sprintf('Unexpected error: %s', $e->getMessage()));
             return Command::FAILURE;
         }
 
         if ($tickets === []) {
-            $io->warning('No se encontraron tickets para el evento.');
+            $io->warning('No tickets were found for this event.');
             return Command::SUCCESS;
         }
 
