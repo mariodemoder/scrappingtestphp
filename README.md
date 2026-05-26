@@ -1,4 +1,4 @@
-# Ticket Scraper (Prueba Tecnica)
+# Ticket Scraper
 
 CLI en PHP para extraer y normalizar entradas desde proveedores de tickets.
 
