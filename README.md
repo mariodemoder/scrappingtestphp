@@ -18,7 +18,7 @@ composer install
 composer test
 ```
 
-3. Ejecuta scraping de evento SeatGeek:
+3. Ejecuta scraping de evento SeatGeek / VividSeats:
 
 ```bash
 php bin/console scrape "https://seatgeek.com/aladdin-tickets/theater/2026-07-15-2-pm/18119434"
